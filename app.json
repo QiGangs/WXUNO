@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/room"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3C6080",
+    "navigationBarTitleText": "小小牌",
+    "navigationBarTextStyle": "#ffffff",
+    "backgroundColor": "#3C6080"
+  },
+  "networkTimeout": {
+    "request": 6000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
+}

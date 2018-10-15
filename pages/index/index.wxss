@@ -1,0 +1,6 @@
+/* pages/index/index.wxss */
+.inputx{
+  margin: 32rpx;
+  background: #cde0cc;
+  size: 48rpx;
+}

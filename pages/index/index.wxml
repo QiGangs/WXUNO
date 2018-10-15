@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+
+<view>
+  <text>welcome 小小牌</text>
+</view>
+
+
+<view>
+  <view >
+    <text style='color:#666666'>房间号:</text>
+    <input name="info1" class='inputx' ></input>
+  </view>
+  <button bindtap='into'> into </button>
+
+</view>
+
+
+
+<view>
+  <button bindtap='create'> create </button>
+</view>
