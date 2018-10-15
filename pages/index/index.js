@@ -138,7 +138,7 @@ Page({
     });
   },
   into:function(){
-    app.globalData.roomid="123456"
+    app.globalData.roomid="7876941195"
     this.beginConnect()
   },
   create:function(){

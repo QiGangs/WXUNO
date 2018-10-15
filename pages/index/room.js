@@ -34,7 +34,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.onSocketClose(function (res) {
+      console.log('已经退出房间')
+      wx.navigateTo({
+        url: './index',
+      })
+    })
   },
 
   /**
@@ -77,6 +82,11 @@ Page({
 
     if(messJson.type == 1){
       this.roomdeal(messJson)
+    }else if(messJson.type == 110){
+      //启动游戏的指令，挑战到游戏界面
+      //to-do
+    }else if(messJson.type == -1){
+      wx.closeSocket()
     }
     
     
@@ -100,17 +110,12 @@ Page({
   }
   ,
   exitroom:function(){
-    //var msg = { type: -1, data: '' }
-    // wx.sendSocketMessage({
-    //   data: JSON.stringify(msg)
-    // })
+    var msg = { type: -1, data: app.globalData.playerid }
+    wx.sendSocketMessage({
+      data: JSON.stringify(msg)
+    })
     wx.closeSocket()
  
-    wx.onSocketClose(function (res) {
-      console.log('已经退出房间')
-      wx.navigateTo({
-        url: './index',
-      })
-    })
+    
   }
 })
