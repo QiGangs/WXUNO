@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      
   },
 
   /**
@@ -138,7 +138,7 @@ Page({
     });
   },
   into:function(){
-    app.globalData.roomid="7876941195"
+    app.globalData.roomid="7ab5033e81"
     this.beginConnect()
   },
   create:function(){

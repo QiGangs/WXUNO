@@ -84,7 +84,9 @@ Page({
       this.roomdeal(messJson)
     }else if(messJson.type == 110){
       //启动游戏的指令，挑战到游戏界面
-      //to-do
+      wx.navigateTo({
+        url: './game',
+      })
     }else if(messJson.type == -1){
       wx.closeSocket()
     }
@@ -115,7 +117,11 @@ Page({
       data: JSON.stringify(msg)
     })
     wx.closeSocket()
- 
-    
+  },
+  startgame:function(){
+    var msg = { type: 110, data: '' }
+    wx.sendSocketMessage({
+      data: JSON.stringify(msg)
+    })
   }
 })

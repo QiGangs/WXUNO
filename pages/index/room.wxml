@@ -14,7 +14,7 @@
 </view>
 
 <view>
-  <button>开始游戏</button>
+  <button bindtap='startgame'>开始游戏</button>
 </view>
 <view>
   <button bindtap='exitroom'>退出房间</button>
