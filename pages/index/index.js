@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    roomid:''
       
   },
 
@@ -138,13 +139,17 @@ Page({
     });
   },
   into:function(){
-    app.globalData.roomid="7ab5033e81"
+    app.globalData.roomid = this.data.roomid
     this.beginConnect()
   },
   create:function(){
     console.log(app.globalData.playerid)
     this.beginConnect()
   },
-  
+  roomidInput:function(e){
+    this.setData({
+      roomid:e.detail.value
+    })
+  }
   
 })

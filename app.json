@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/index/game",
     "pages/index/index",
-    "pages/index/room",
-    "pages/index/game"
+    "pages/index/room"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

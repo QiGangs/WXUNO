@@ -1,2 +1,42 @@
 <!--pages/index/game.wxml-->
-<text>pages/index/game.wxml</text>
+<view class='layout_horizontal'>
+  <view> 牌堆：{{cardPileNum}}</view>
+  <view> 弃牌堆：{{disCardPileNum}}</view>
+</view>
+
+<view class='line'></view>
+
+<view class='playlist'>
+  <view> 玩家1 :{{players[0]}}</view>
+</view>
+
+<view class='line'></view>
+
+<view>
+  <view>
+      card
+      <view>{{card.type}}</view>
+      <view>{{card.num}}</view>
+      <view>{{card.func}}</view>
+  </view>
+</view>
+
+<view class='line'></view>
+
+<view>
+  <scroll-view scroll-x class="scroll-header">
+    <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="items"> 
+    <view class='cardi'>
+      <view class='itemTitle'>牌ID{{items.id}}</view>
+      <view class='itemAnswer'>类型：{{items.type}}</view>
+      <view class='myAnswer'>数字：{{items.num}}</view>
+      <view class='itemDescription'>功能：{{items.func}}</view>
+      <view class='itemDescription'>颜色：{{items.color}}</view>
+    </view>
+    
+    </view>
+  </scroll-view>  
+</view>
+
+<button bindtap='add'>ADD </button>
+

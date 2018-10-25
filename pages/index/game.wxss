@@ -1,1 +1,47 @@
 /* pages/index/game.wxss */
+.scroll-header{
+display: flex;
+flex-direction: row;
+white-space: nowrap;  
+}
+/* .scroll-header view{
+height:128rpx;
+width:128rpx;
+border:1px solid black;  
+display: inline-block; 
+} */
+
+.cardi{
+  height:328rpx;
+  width:200rpx;
+  border:1px solid black;
+  display: flex;
+  flex-direction: column
+}
+.cardlist{
+  padding: 16rpx;
+  display: inline-block; 
+}
+
+
+.layout_horizontal{
+  height: 100rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.playlist{
+  height: 100rpx;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.line{
+  margin: 2px;
+  height: 2rpx;
+  width: 100%;
+  background: #234567
+}
