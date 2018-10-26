@@ -11,6 +11,9 @@
 </view>
 
 <view class='line'></view>
+<view>可以出牌的是{{canPutPlayerId}}</view>
+<view>我我我我我是{{canPutPlayerId}}</view>
+<view class='line'></view>
 
 <view>
   <view>
@@ -18,14 +21,25 @@
       <view>{{card.type}}</view>
       <view>{{card.num}}</view>
       <view>{{card.func}}</view>
+      <view>{{card.color}}</view>
   </view>
 </view>
 
 <view class='line'></view>
 
+
+<view>共有{{rudge.length}}张牌</view>
+
+<view>当前选中ID为 {{cardid}} 的牌</view>
+
+<view class='line'></view>
+
+
+<button bindtap='putcard'>put card </button>
+
 <view>
   <scroll-view scroll-x class="scroll-header">
-    <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" wx:for-item="items"> 
+    <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" data-id="{{items.id}}"  wx:for-item="items"> 
     <view class='cardi'>
       <view class='itemTitle'>牌ID{{items.id}}</view>
       <view class='itemAnswer'>类型：{{items.type}}</view>
@@ -33,10 +47,9 @@
       <view class='itemDescription'>功能：{{items.func}}</view>
       <view class='itemDescription'>颜色：{{items.color}}</view>
     </view>
-    
     </view>
   </scroll-view>  
 </view>
-
-<button bindtap='add'>ADD </button>
+<!-- 测试用
+<button bindtap='add'>ADD </button> -->
 

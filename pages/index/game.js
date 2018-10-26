@@ -1,10 +1,14 @@
 // pages/index/game.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    myid:-1,
+    canPutPlayerId:-1,
+    cardid:-1,
     cardPileNum:108,
     disCardPileNum:0,
     players:["asdasd"],
@@ -16,11 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //暂时先注释掉
-    // wx.onSocketMessage(res => {
-    //   console.log(res.type+" "+res.data)
-      
-    // })
+    wx.onSocketMessage(res => {
+      //console.log(res.type+" "+res.data)
+      this.dealgameinfo(res.data)
+    })
   },
 
   /**
@@ -71,18 +74,47 @@ Page({
   onShareAppMessage: function () {
 
   },
-  add:function(){
+  // add:function(){测试用
+  //   this.setData({
+  //     rudge: [{ "id": 20, "type": "num", "num": 2, "func": "nofunc", "color": "red" },
+  //     { "id": 89, "type": "func", "num": -1, "func": "stop", "color": "green" },
+  //     { "id": 79, "type": "func", "num": -1, "func": "add2", "color": "blue" },
+  //     { "id": 76, "type": "num", "num": 9, "func": "nofunc", "color": "red" },
+  //     { "id": 9, "type": "num", "num": 1, "func": "nofunc", "color": "blue" },
+  //     { "id": 52, "type": "num", "num": 6, "func": "nofunc", "color": "red" },
+  //     { "id": 65, "type": "num", "num": 8, "func": "nofunc", "color": "blue" }]
+  //   })
+  // },
+  cardclick:function(e){
+    var cindex = parseInt(e.currentTarget.dataset.id)
     this.setData({
-      rudge: [{ "id": 20, "type": "num", "num": 2, "func": "nofunc", "color": "red" },
-      { "id": 89, "type": "func", "num": -1, "func": "stop", "color": "green" },
-      { "id": 79, "type": "func", "num": -1, "func": "add2", "color": "blue" },
-      { "id": 76, "type": "num", "num": 9, "func": "nofunc", "color": "red" },
-      { "id": 9, "type": "num", "num": 1, "func": "nofunc", "color": "blue" },
-      { "id": 52, "type": "num", "num": 6, "func": "nofunc", "color": "red" },
-      { "id": 65, "type": "num", "num": 8, "func": "nofunc", "color": "blue" }]
+      cardid:cindex
     })
   },
-  cardclick:function(){
-    console.log("asd")
+  putcard:function(e){
+    if(this.data.cardid != -1){
+      //type3表示为游戏信息
+      var msg = { type: 3, data: { putcardid: this.data.cardid, putplayerid: app.globalData.playerid}} 
+      wx.sendSocketMessage({
+        data: JSON.stringify(msg)
+      })
+    }
+  },
+  dealgameinfo:function(x){
+    var jsonStr = x.replace(/\ufeff/g, "");//重点
+    var e = JSON.parse(jsonStr);
+    // console.log(e.data)
+    if(e.type == 3){
+      this.setData({
+        myid: e.data.currentPlayer.playerId,
+        rudge: e.data.currentPlayer.rudge,
+        cardPileNum: e.data.cardPileNum,
+        disCardPileNum: e.data.disCardPileNum,
+        canPutPlayerId: e.data.canPutPlayerId,
+        card: e.data.prevCard,
+      })
+    }else{
+
+    }
   }
 })

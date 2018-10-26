@@ -12,8 +12,9 @@ display: inline-block;
 } */
 
 .cardi{
+  padding: 6rpx;
   height:328rpx;
-  width:200rpx;
+  width:236rpx;
   border:1px solid black;
   display: flex;
   flex-direction: column
