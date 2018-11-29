@@ -6,6 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tempcolor:"",
+    colorshow:false,
+
     myid:-1,
     canPutPlayerId:-1,
     cardid:-1,
@@ -87,18 +90,38 @@ Page({
   // },
   cardclick:function(e){
     var cindex = parseInt(e.currentTarget.dataset.id)
-    this.setData({
-      cardid:cindex
-    })
+    var funtpy = e.currentTarget.dataset.funtpy
+    if (funtpy == "change" || funtpy == "trump"){
+      this.setData({
+        colorshow:true,
+        cardid: cindex,
+      })
+    }else{
+      this.setData({
+        cardid: cindex,
+        colorshow: false
+      })
+    }
+    
   },
   putcard:function(e){
     if(this.data.cardid != -1){
       //type3表示为游戏信息
-      var msg = { type: 3, data: { putcardid: this.data.cardid, putplayerid: app.globalData.playerid}} 
+      //再次判断是否需要携带tempcolor
+      var msg = { type: 3, data: { putcardid: this.data.cardid, putplayerid: app.globalData.playerid, tempcolor: this.data.tempcolor}} 
       wx.sendSocketMessage({
         data: JSON.stringify(msg)
       })
     }
+  },
+  getcard:function(e){
+    //if (this.data.cardid != -1) {
+      //type3表示为游戏信息
+      var msg = { type: 3, data: { putcardid: -1, putplayerid: app.globalData.playerid } }
+      wx.sendSocketMessage({
+        data: JSON.stringify(msg)
+      })
+    //}
   },
   dealgameinfo:function(x){
     var jsonStr = x.replace(/\ufeff/g, "");//重点
@@ -116,5 +139,25 @@ Page({
     }else{
 
     }
+  },
+  ctor:function(){
+    this.setData({
+      tempcolor:"red"
+    })
+  },
+  ctoy: function () {
+    this.setData({
+      tempcolor: "yellow"
+    })
+  },
+  ctob: function () {
+    this.setData({
+      tempcolor: "blue"
+    })
+  },
+  ctog: function () {
+    this.setData({
+      tempcolor: "green"
+    })
   }
 })

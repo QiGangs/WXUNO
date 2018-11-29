@@ -12,7 +12,7 @@
 
 <view class='line'></view>
 <view>可以出牌的是{{canPutPlayerId}}</view>
-<view>我我我我我是{{canPutPlayerId}}</view>
+<view>我我我我我是{{myid}}</view>
 <view class='line'></view>
 
 <view>
@@ -34,12 +34,20 @@
 
 <view class='line'></view>
 
+<view style="{{colorshow?'display:block':'display:none'}}">
+  <view>要修改的颜色为 {{tempcolor}} </view>
+  <view bindtap='ctor'>red</view>
+  <view bindtap='ctoy'>yelloe</view>
+  <view bindtap='ctob'>blue</view>
+  <view bindtap='ctog'>green</view>
+</view>
 
 <button bindtap='putcard'>put card </button>
+<button bindtap='getcard'>get card </button>
 
 <view>
   <scroll-view scroll-x class="scroll-header">
-    <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" data-id="{{items.id}}"  wx:for-item="items"> 
+    <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" data-id="{{items.id}}" data-funtpy="{{items.func}}"  wx:for-item="items"> 
     <view class='cardi'>
       <view class='itemTitle'>牌ID{{items.id}}</view>
       <view class='itemAnswer'>类型：{{items.type}}</view>
