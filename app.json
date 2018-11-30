@@ -1,10 +1,9 @@
 {
   "pages": [
-    
     "pages/index/index",
     "pages/index/game",
-    "pages/index/room"
-    
+    "pages/index/room",
+    "pages/index/result"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -16,6 +16,7 @@
 <view class='line'></view>
 
 <view>
+  <view>tempcolor:{{truetempcolor}}</view>
   <view>
       card
       <view>{{card.type}}</view>

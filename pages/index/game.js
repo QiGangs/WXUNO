@@ -16,7 +16,8 @@ Page({
     disCardPileNum:0,
     players:["asdasd"],
     card:{"type":"func","num":-1,"func":"stop"},
-    rudge: [{ "id": 20, "type": "num", "num": 2, "func": "nofunc", "color": "red" }]
+    rudge: [{ "id": 20, "type": "num", "num": 2, "func": "nofunc", "color": "red" }],
+    truetempcolor:""
   },
 
   /**
@@ -135,10 +136,17 @@ Page({
         disCardPileNum: e.data.disCardPileNum,
         canPutPlayerId: e.data.canPutPlayerId,
         card: e.data.prevCard,
+        truetempcolor: e.data.truetempcolor
       })
-    }else{
+    } else if (e.type == 4){
+      wx.navigateTo({
+        url: './result',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+    }else{}
 
-    }
   },
   ctor:function(){
     this.setData({
