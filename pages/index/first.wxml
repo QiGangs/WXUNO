@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="maininfo">
+
+  <image class='img' src='../img/icon1.png'></image>
+
+  <text class='tyxy'>UNO牌的变种</text>
+  <text class='tyxy'>大大的牌</text>
+  <view class="usermotto">
+    <text class="user-motto">{{info1}}</text>
+  </view>
+  <view class="usermotto3">
+    <text class="user-motto">{{info3}}</text>
+  </view>
+
+  
+
+  <view class="userinfo">
+    <button class='btn' hover-class='btn-hover' bindtap='intoSystem'> 进入游戏 </button>
+  </view>
+
+  <!-- <view class='alarmx'>
+    {{alarm}}
+  </view> -->
+  
+</view>
