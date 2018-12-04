@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/index/first", 
+    "pages/index/first",
     "pages/index/game",
+    "pages/index/result",
     "pages/index/room",
-    "pages/index/result"
+    "pages/index/index"
+    
+    
     
   ],
   "window": {

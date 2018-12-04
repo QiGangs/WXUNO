@@ -7,7 +7,7 @@ Page({
    */
   data: {
     roomid:'',
-    palyers:[],
+    palyers:['001','007'],
   },
 
   /**

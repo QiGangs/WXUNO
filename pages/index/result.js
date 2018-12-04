@@ -62,5 +62,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  returnback:function(){
+    var msg = { type: -1, data: app.globalData.playerid }
+    wx.sendSocketMessage({
+      data: JSON.stringify(msg)
+    })
+    
+    wx.navigateTo({
+      url: './first',
+      success: function(res) {
+        wx.closeSocket()
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })

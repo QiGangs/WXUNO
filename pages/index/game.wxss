@@ -12,25 +12,67 @@ display: inline-block;
 } */
 
 .cardi{
-  padding: 6rpx;
-  height:328rpx;
+  padding: 0rpx;
+  height:340rpx;
   width:236rpx;
   border:1px solid black;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
+
+.cardii{
+  padding: 0rpx;
+  height:340rpx;
+  width:236rpx;
+  border:1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
 .cardlist{
   padding: 16rpx;
   display: inline-block; 
 }
 
+.linel{
+  height: 50rpx;
+  width: 1rpx;
+  background-color: #eeeeee;
+}
+.t1x{
+  margin-left: 16rpx;
+  margin-right: 32rpx;
+}
+.t2x{
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+.t3x{
+  margin-left: 32rpx;
+}
 
 .layout_horizontal{
-  height: 100rpx;
+  background-color: #3C6080;
+  color: #ffffff;
+  padding: 16rpx;
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: row;
 }
+
+
+.leftright{
+  background-color: #ffffff;
+  padding: 16rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.cardtmp{
+  margin-left: 48rpx;
+}
+
 .playlist{
   height: 100rpx;
   display: flex;
@@ -45,4 +87,74 @@ display: inline-block;
   height: 2rpx;
   width: 100%;
   background: #234567
+}
+
+.cardcolor{
+  height: 66rpx;
+  background-color: red;
+
+}
+
+.carditem{
+  font-size: 56rpx;
+  margin-left: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.changelist{
+ height: 100rpx;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.changetop{
+  padding: 8rpx;
+  margin-left: 8rpx;
+}
+
+.btmmr{
+  color:#ffffff;
+  background-color: red;
+  width: 20%;
+}
+.btmmy{
+  color:#999999;
+  background-color: yellow;
+  width: 20%;
+}
+.btmmb{
+  color:#ffffff;
+  background-color: blue;
+  width: 20%;
+}
+.btmmg{
+  color:#ffffff;
+  background-color: green;
+  width: 20%;
+}
+
+.btnlist{
+  height: 100rpx;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+.infoxxxx{
+  padding: 24rpx;
+  color: #ffffff;
+  background-color: #3C6080;
+}
+
+.btnn{
+  color:#ffffff;
+  background-color: #3C6080;
+  width: 40%;
 }

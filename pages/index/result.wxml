@@ -1,3 +1,9 @@
 <!--pages/index/result.wxml-->
 
-<text>pages/index/result.wxml</text>
+<view class='titlex'>
+  <text class='tit'>GAME OVER</text>
+</view>
+
+<view>
+<button bindtap='returnback'>返回大厅</button>
+</view>

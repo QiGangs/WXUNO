@@ -1,21 +1,24 @@
 <!--pages/index/room.wxml-->
-<text>pages/index/room.wxml</text>
-<view>
-  <view>房间ID</view>
-  <view>{{roomid}}</view>
+<view class='titlex'>
+  <view class='cardinfo'>
+    <view>房间ID：{{roomid}}</view>
+  </view>
 </view>
 
-<view>
-  <view>用户列表</view>
-  <view>{{players[0]}}</view>
-  <view>{{players[1]}}</view>
-  <view>{{players[2]}}</view>
-  <view>{{players[3]}}</view>
+
+
+<view class='playlist'>
+  <view class='play'><text class='ptxt'>{{players[0]}}</text></view>
+  <view class='play'><text class='ptxt'>{{players[1]}}</text></view>
+  <view class='play'><text class='ptxt'>{{players[2]}}</text></view>
+  <view class='play'><text class='ptxt'>{{players[3]}}</text></view>
 </view>
 
-<view>
-  <button bindtap='startgame'>开始游戏</button>
+<view class='btx'>
+  <button class='bt' bindtap='startgame'>开始游戏</button>
 </view>
-<view>
-  <button bindtap='exitroom'>退出房间</button>
+<view class='btx'>
+  <button class='bt' bindtap='exitroom'>退出房间</button>
 </view>
+
+
