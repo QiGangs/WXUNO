@@ -17,7 +17,12 @@ Page({
     players:["asdasd"],
     card:{"type":"func","num":-1,"func":"stop","color":"nocolor","id":"000"},
     rudge: [{ "id": 20, "type": "num", "num": 2, "func": "trump", "color": "red" }],
-    truetempcolor:""
+    truetempcolor:"",
+
+    listpid: ["001", "002", "003", "004"],
+    me: "001",
+    cu: "002",
+    derction:0
   },
 
   /**
@@ -136,10 +141,15 @@ Page({
         disCardPileNum: e.data.disCardPileNum,
         canPutPlayerId: e.data.canPutPlayerId,
         card: e.data.prevCard,
-        truetempcolor: e.data.truetempcolor
+        truetempcolor: e.data.truetempcolor,
+        listpid: e.data.playerlist,
+        derction: e.data.derction,
+        me: e.data.currentPlayer.playerId,
+        cu: e.data.canPutPlayerId
       })
+      //console.log(e)
     } else if (e.type == 4){
-      wx.navigateTo({
+      wx.redirectTo({
         url: './result',
         success: function(res) {},
         fail: function(res) {},
@@ -167,5 +177,12 @@ Page({
     this.setData({
       tempcolor: "green"
     })
+  },
+  exitgame: function () {
+    var msg = { type: -1, data: app.globalData.playerid }
+    wx.sendSocketMessage({
+      data: JSON.stringify(msg)
+    })
+    wx.closeSocket()
   }
 })

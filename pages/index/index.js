@@ -77,8 +77,8 @@ Page({
   onShow: function () {
     //this.beginConnect()
     wx.onSocketClose(function (res) {
-      console.log('已经退出房间')
-      wx.navigateTo({
+      console.log('已经退出房间 in index')
+      wx.redirectTo({
         url: './index',
       })
     })
@@ -125,7 +125,7 @@ Page({
       success: function () {
         isConnect: true
         console.log("连接成功...")
-        wx.navigateTo({
+        wx.redirectTo({
           url: './room',
           success: function(res) {},
           fail: function(res) {},

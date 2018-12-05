@@ -10,7 +10,10 @@ width:128rpx;
 border:1px solid black;  
 display: inline-block; 
 } */
-
+.derc{
+  margin-top: 12rpx;
+  margin-left: 12rpx;
+}
 .cardi{
   padding: 0rpx;
   height:340rpx;
@@ -41,14 +44,14 @@ display: inline-block;
 }
 .t1x{
   margin-left: 16rpx;
-  margin-right: 32rpx;
+  margin-right: 22rpx;
 }
 .t2x{
-  margin-left: 32rpx;
-  margin-right: 32rpx;
+  margin-left: 22rpx;
+  margin-right: 22rpx;
 }
 .t3x{
-  margin-left: 32rpx;
+  margin-left: 22rpx;
 }
 
 .layout_horizontal{
@@ -153,8 +156,43 @@ display: inline-block;
   background-color: #3C6080;
 }
 
+.playercard{
+  padding: 24rpx;
+  color: #ffffff;
+  background-color: #3C6080;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+
 .btnn{
   color:#ffffff;
   background-color: #3C6080;
   width: 40%;
+}
+
+
+.sta1{
+  padding-top: 8rpx;
+  color: #ffffff;
+  width: 72rpx;
+  height: 72rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  background-color: #f10b2e;
+}
+.sta2{
+  padding-top: 8rpx;
+  color: #ffffff;
+  width: 72rpx;
+  height: 72rpx;
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+  border: 0 solid #aaaaaa;
+  border-radius: 100rpx;
+  background-color: #aaaaaa;
+}
+.stax{
+  margin-left: 10rpx;
 }

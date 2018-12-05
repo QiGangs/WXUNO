@@ -4,7 +4,19 @@
   <view class='linel'></view>
   <view class='t2x'> 弃牌堆：{{disCardPileNum}}</view>
   <view class='linel'></view>
-  <view class='t3x'> 出牌：{{myid == canPutPlayerId ? "是":"否"}}</view>
+  <view class='t2x'> 出牌：{{myid == canPutPlayerId ? "是":"否"}}</view>
+  <view class='linel'></view>
+  <view bindtap='exitgame' class='t3x'> EX </view>
+</view>
+
+<view class='playercard'>
+  <view  wx:for="{{listpid}}" wx:key="{{index}}" wx:for-index="index"  wx:for-item="items"> 
+      <view style="{{ items == cu ? 'background-color:red' : ''}}" class='sta2'>
+        <view class='stax'>{{items == me ? "Me" : "  "}}</view>
+      </view>
+  </view>
+
+  <view class='derc'> 当前方向 {{derction == 1? "->":"<-"}} </view>
 </view>
 
 <!-- <view class='line'></view> -->

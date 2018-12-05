@@ -36,8 +36,8 @@ Page({
   onShow: function () {
     wx.onSocketClose(function (res) {
       console.log('已经退出房间')
-      wx.navigateTo({
-        url: './index',
+      wx.redirectTo({
+       url: './index',
       })
     })
   },
@@ -84,7 +84,7 @@ Page({
       this.roomdeal(messJson)
     }else if(messJson.type == 110){
       //启动游戏的指令，挑战到游戏界面
-      wx.navigateTo({
+      wx.redirectTo({
         url: './game',
       })
     }else if(messJson.type == -1){

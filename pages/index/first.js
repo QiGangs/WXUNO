@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info1:"游戏游戏游戏游戏"
+    info1:"游戏游戏游戏游戏",
+    
   },
 
   /**
@@ -64,7 +65,7 @@ Page({
 
   },
   intoSystem:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: './index',
       success: function(res) {},
       fail: function(res) {},
