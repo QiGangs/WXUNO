@@ -71,7 +71,7 @@ Page({
     })
     
     wx.redirectTo({
-      url: './index',
+      url: './first',
       success: function(res) {
         wx.closeSocket()
       },

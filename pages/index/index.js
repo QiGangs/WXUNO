@@ -79,7 +79,7 @@ Page({
     wx.onSocketClose(function (res) {
       console.log('已经退出房间 in index')
       wx.redirectTo({
-        url: './index',
+        url: './first',
       })
     })
   },

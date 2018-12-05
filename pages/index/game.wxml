@@ -10,13 +10,14 @@
 </view>
 
 <view class='playercard'>
-  <view  wx:for="{{listpid}}" wx:key="{{index}}" wx:for-index="index"  wx:for-item="items"> 
+  <view class='playerstatusf'  wx:for="{{listpid}}" wx:key="{{index}}" wx:for-index="index"  wx:for-item="items"> 
       <view style="{{ items == cu ? 'background-color:red' : ''}}" class='sta2'>
         <view class='stax'>{{items == me ? "Me" : "  "}}</view>
       </view>
+      <view class='derc'>{{derction == 1? "=>":"<="}} </view>
   </view>
 
-  <view class='derc'> 当前方向 {{derction == 1? "->":"<-"}} </view>
+  
 </view>
 
 <!-- <view class='line'></view> -->
@@ -28,24 +29,47 @@
 <!-- <view>可以出牌的是{{canPutPlayerId}}</view>
 <view>我我我我我是{{myid}}</view> -->
 
-
 <view class='leftright'>
   
-  <view class="cardii">
-      <view style="{{card.color == 'nocolor' ? 'background-color:black': card.color == 'red' ? 'background-color:red' : card.color == 'yellow' ? 'background-color:yellow' : card.color == 'blue' ? 'background-color:blue' : card.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view>
-      <view class='carditem'>{{card.type}}</view>
-      <view style="{{card.type != 'num'?'display:none':'display:block'}}" class='carditem'>{{card.num}}</view>
-      <view style="{{card.type != 'num'?'display:block':'display:none'}}" class='carditem'>{{card.func}}</view>
-      <!-- <view>{{card.color}}</view> 颜色有上下两个div显示了 -->
-      <view style="{{card.color == 'nocolor' ? 'background-color:black': card.color == 'red' ? 'background-color:red' : card.color == 'yellow' ? 'background-color:yellow' : card.color == 'blue' ? 'background-color:blue' : card.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view>
+  <view style="{{card.color == 'nocolor' ? 'background-color:black': card.color == 'red' ? 'background-color:red' : card.color == 'yellow' ? 'background-color:orange' : card.color == 'blue' ? 'background-color:blue' : card.color == 'green' ? 'background-color:green':''}}" class="cardii">
+      <view class='cardtopx'>
+        <view class='onefourc'>
+        <!-- 这里不需要填内容 -->
+        </view>
+      </view>
+
+      <view class='cardcenter'>
+        <view style="{{card.color == 'nocolor' ? 'color:black': card.color == 'red' ? 'color:red' : card.color == 'yellow' ? 'color:orange' : card.color == 'blue' ? 'color:blue' : card.color == 'green' ? 'color:green':''}}"  class='oneonec'>
+          <view style="{{card.type != 'num'?'display:none':'display:block'}}" class='carditemn'>{{card.num}}</view>
+      <view style="{{card.type != 'num'?'display:block':'display:none'}}" class='carditemf'>{{card.func == "stop"?"S":card.func == "trump"?"T":card.func == "reverse"?"R":card.func =="add2"?"A":card.func == "change"?"C":" "}}</view>
+        </view>
+      </view>
+
+      <view class='cardbottomx'>
+        <view class='onefourc1'>
+        <!-- 这里不需要填内容 -->
+        </view>
+      </view>
   </view>
+
+
+      <!-- <view style="{{card.color == 'nocolor' ? 'background-color:black': card.color == 'red' ? 'background-color:red' : card.color == 'yellow' ? 'background-color:yellow' : card.color == 'blue' ? 'background-color:blue' : card.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view> -->
+      <!-- <view class='carditem'>{{card.type}}</view>
+       -->
+      <!-- <view>{{card.color}}</view> 颜色有上下两个div显示了 -->
+      <!-- <view style="{{card.color == 'nocolor' ? 'background-color:black': card.color == 'red' ? 'background-color:red' : card.color == 'yellow' ? 'background-color:yellow' : card.color == 'blue' ? 'background-color:blue' : card.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view> -->
+
 
   <view class='cardtmp'>功能牌的变色：{{truetempcolor}}</view>
 </view>
 
 
 
-<view class='infoxxxx'>共有 {{rudge.length}} 张牌， 当前选中ID为 {{cardid}} 的牌</view>
+<view class='infoxxxx'>
+  <view class='t1x'> 手牌数：{{rudge.length}}</view>
+  <view class='linel1'></view>
+  <view class='t2x'> 选择的牌：{{cardid}}</view>
+</view>
 
 <view style="{{colorshow?'display:block':'display:none'}}">
   <view class='changetop'>要修改的颜色为 {{tempcolor}} </view>
@@ -63,18 +87,35 @@
 <view>
   <scroll-view scroll-x class="scroll-header">
     <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" data-id="{{items.id}}" data-funtpy="{{items.func}}"  wx:for-item="items"> 
-    <view class='cardi'>
-      <view style="{{items.color == 'nocolor' ? 'background-color:black': items.color == 'red' ? 'background-color:red' : items.color == 'yellow' ? 'background-color:yellow' : items.color == 'blue' ? 'background-color:blue' : items.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view>
-      <view class='itemTitle'>牌ID：{{items.id}}</view>
-      <view class='itemAnswer'>类型：{{items.type}}</view>
-      <view class='myAnswer'>数字：{{items.num}}</view>
-      <view class='itemDescription'>功能：{{items.func}}</view>
-      <!-- <view class='itemDescription'>颜色：{{items.color}}</view> -->
-       <view style="{{items.color == 'nocolor' ? 'background-color:black': items.color == 'red' ? 'background-color:red' : items.color == 'yellow' ? 'background-color:yellow' : items.color == 'blue' ? 'background-color:blue' : items.color == 'green' ? 'background-color:green':''}}" class='cardcolor'> </view>
+    <view style="{{items.color == 'nocolor' ? 'background-color:black': items.color == 'red' ? 'background-color:red' : items.color == 'yellow' ? 'background-color:orange' : items.color == 'blue' ? 'background-color:blue' : items.color == 'green' ? 'background-color:green':''}}" class="cardii">
+
+      <view class='cardtopx'>
+        <view class='onefourc'>
+        <view class='idclass1'>{{items.id}}</view>
+        </view>
+      </view>
+
+      <view class='cardcenter'>
+        <view style="{{items.color == 'nocolor' ? 'color:black': items.color == 'red' ? 'color:red' : items.color == 'yellow' ? 'color:orange' : items.color == 'blue' ? 'color:blue' : items.color == 'green' ? 'color:green':''}}"  class='oneonec'>
+          <view style="{{items.type != 'num'?'display:none':'display:block'}}" class='carditemn'>{{items.num}}</view>
+      <view style="{{items.type != 'num'?'display:block':'display:none'}}" class='carditemf'>{{items.func == "stop"?"S":items.func == "trump"?"T":items.func == "reverse"?"R":items.func =="add2"?"A":items.func == "change"?"C":" "}}</view>
+        </view>
+      </view>
+
+      <view class='cardbottomx'>
+        <view class='onefourc1'>
+          <view class='idclass2'>{{items.id}}</view>
+        </view>
+      </view>
+      
     </view>
     </view>
   </scroll-view>  
 </view>
+      <!-- <view class='itemTitle'>牌ID：{{items.id}}</view> -->
+      <!-- <view class='itemAnswer'>类型：{{items.type}}</view>
+      <view class='myAnswer'>数字：{{items.num}}</view>
+      <view class='itemDescription'>功能：{{items.func}}</view> -->
 
 <view class='btnlist'>
   <button class='btnn' bindtap='putcard'>出 牌</button>

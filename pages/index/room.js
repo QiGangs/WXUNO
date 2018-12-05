@@ -37,7 +37,7 @@ Page({
     wx.onSocketClose(function (res) {
       console.log('已经退出房间')
       wx.redirectTo({
-       url: './index',
+       url: './first',
       })
     })
   },

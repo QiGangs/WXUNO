@@ -15,8 +15,8 @@ Page({
     cardPileNum:108,
     disCardPileNum:0,
     players:["asdasd"],
-    card:{"type":"func","num":-1,"func":"stop","color":"nocolor","id":"000"},
-    rudge: [{ "id": 20, "type": "num", "num": 2, "func": "trump", "color": "red" }],
+    card:{"type":"fun","num":-1,"func":"trump","color":"nocolor","id":"000"},
+    rudge: [{ "id": 22, "type": "num", "num": 2, "func": "nofunc", "color": "green" }],
     truetempcolor:"",
 
     listpid: ["001", "002", "003", "004"],

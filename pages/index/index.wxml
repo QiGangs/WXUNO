@@ -28,8 +28,8 @@
   <text>\n谁先出完牌谁先赢！</text>
   <text>\n颜色相同或数字相同可以出牌。</text>
   <text>\n有些功能牌也需颜色相同，有些则不然。</text>
-  <text>\n这不是UNO牌，规则请自己摸索。</text>
-  <text>\n形似而神不似。</text>
+  <!-- <text>\n这不是UNO牌，规则请自己摸索。</text>
+  <text>\n形似而神不似。</text> -->
 </view>
 
 <view class='linex'></view>

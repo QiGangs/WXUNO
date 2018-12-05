@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/first",
     "pages/index/game",
     "pages/index/result",
