@@ -1,4 +1,5 @@
 // pages/index/first.js
+const app = getApp()
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     info1:"游戏游戏游戏游戏",
-    
+    alarm:""
   },
 
   /**
@@ -65,11 +66,51 @@ Page({
 
   },
   intoSystem:function(){
-    wx.redirectTo({
-      url: './index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+    wx.login({
+      success: res => {
+        if (res.code) {
+          console.log(res.code)
+          wx.request({
+            url: getApp().globalData.address + '/wx/login',
+            method: 'POST',
+            header: {
+              'Cache-Control': 'no-cache',
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: {
+              code: res.code,
+            },
+            success: res => {
+              if (res.statusCode == 200) {
+                app.globalData.playerid = res.data
+                console.log(app.globalData.playerid)
+                wx.redirectTo({
+                  url: './index',
+                  success: function (res) { },
+                  fail: function (res) { },
+                  complete: function (res) { },
+                })
+              }
+            },
+            fail: res => {
+              console.log("netwrror")
+              console.log(res)
+              this.setData({
+                alarm: "登录失败"
+              })
+            }
+          })
+        } else {
+          // this.setData({
+          //   alarm: "微信授权失败"
+          // })
+          console.log(res + "微信授权失败")
+        }
+      },
+      fail: res => {
+        console.log(res + "wxlogin")
+      }
+    });
+    
   }
 })

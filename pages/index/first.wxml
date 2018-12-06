@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="maininfo">
 
-  <image class='img' src='../img/icon1.png'></image>
+  <image class='img' src='../img/icon.png'></image>
 
   <text class='tyxy'>小小的牌</text>
   <text class='tyxy'>大大的牌</text>
@@ -18,9 +18,9 @@
     <button class='btn' hover-class='btn-hover' bindtap='intoSystem'> 进入游戏 </button>
   </view>
 
-  <!-- <view class='alarmx'>
+  <view class='alarmx'>
     {{alarm}}
-  </view> -->
+  </view>
   
 </view>
 

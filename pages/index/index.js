@@ -14,35 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.login({
-      success: res => {
-        if (res.code) {
-          wx.request({
-            url: getApp().globalData.address + '/wx/login',
-            method: 'POST',
-            header: {
-              'Cache-Control': 'no-cache',
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            data: {
-              code: res.code,
-            },
-            success: res => {
-              if (res.statusCode == 200) {
-                app.globalData.playerid = res.data
-              }
-            },
-            fail: res => {
-              console.log(res)
-            }
-          })
-        } else {
-          // this.setData({
-          //   alarm: "微信授权失败"
-          // })
-        }
-      }
-    });
+    
     
     // wx.onSocketOpen(function (res) {
     //   console.log('WebSocket连接已打开！')
