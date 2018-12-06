@@ -6,9 +6,6 @@
     "pages/index/result",
     "pages/index/room",
     "pages/index/index"
-    
-    
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
