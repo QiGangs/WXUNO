@@ -9,8 +9,8 @@ App({
     id:'',
     // address: "http://localhost:8443",
     // socketurl: "ws://localhost:8443",
-    address: "https://uno.gongyl.cn:8080",
-    socketurl: "wss://uno.gongyl.cn:8080"
+    address: "https://uno.gongyl.cn",
+    socketurl: "wss://uno.gongyl.cn"
   },
 
   onLaunch: function () {
