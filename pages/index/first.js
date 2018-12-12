@@ -70,18 +70,6 @@ Page({
       success: res => {
         if (res.code) {
           console.log(res.code)
-
-              // if (res.code) {
-              //   app.globalData.playerid = res.code
-              //   console.log(app.globalData.playerid)
-              //   wx.redirectTo({
-              //     url: './index',
-              //     success: function (res) { },
-              //     fail: function (res) { },
-              //     complete: function (res) { },
-              //   })
-              // }
-
           wx.request({
             url: getApp().globalData.address + '/wx/login',
             method: 'POST',
@@ -96,7 +84,7 @@ Page({
               if (res.statusCode == 200) {
                 app.globalData.playerid = res.data
                 console.log(app.globalData.playerid)
-                wx.redirectTo({
+                wx.navigateTo({
                   url: './index',
                   success: function (res) { },
                   fail: function (res) { },

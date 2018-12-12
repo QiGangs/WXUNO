@@ -7,10 +7,10 @@ App({
     playerid:'123',
     auth: '',
     id:'',
-    // address: "http://localhost:8443",
-    // socketurl: "ws://localhost:8443",
-    address: "https://uno.gongyl.cn",
-    socketurl: "wss://uno.gongyl.cn"
+    address: "http://192.168.0.103:8080",
+    socketurl: "ws://192.168.0.103:8080",
+    // address: "https://uno.gongyl.cn",
+    // socketurl: "wss://uno.gongyl.cn"
   },
 
   onLaunch: function () {
