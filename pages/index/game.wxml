@@ -11,7 +11,7 @@
 
 <view class='playercard'>
   <view class='playerstatusf'  wx:for="{{listpid}}" wx:key="{{index}}" wx:for-index="index"  wx:for-item="items"> 
-      <view style="{{ items == cu ? 'background-color:red' : ''}}" class='sta2'>
+      <view style="{{ items.id == cu ? 'background-color:red' : ''}}" class='sta2'>
         <view class='stax'>{{items.id == me ? "Me" : " "+items.num}}</view>
       </view>
       <view class='derc'>{{derction == 1? "=>":"<="}} </view>
