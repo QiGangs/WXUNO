@@ -12,7 +12,7 @@
   padding: 32rpx;
   height: 160rpx;
   width: 100%;
-  background-color: #3C6080;
+  background-color: #0091ea;
 }
 
 .ix{
@@ -32,13 +32,13 @@
 }
 
 .bt{
-  background-color: #3C6080;
+  background-color: #0091ea;
   color: #ffffff
 }
 .oth{
   padding: 16rpx;
   margin-top: 16rpx;
   width: 100%;
-  color: #3C6080;
+  color: #0091ea;
   margin-bottom: 16rpx;
 }

@@ -83,6 +83,7 @@
   font-size: 53rpx;
   color: #0091ea;
   font-weight: 800;
+  text-shadow: 1rpx 1rpx 4rpx #0091ea;
 }
 
 .btn {
@@ -94,8 +95,9 @@
   color:white;
   overflow:hidden;
   height:100rpx;
+  border: #0091ea;
   border-radius: 64rpx;
-  box-shadow:2rpx 2rpx 10rpx #0091ea;
+  box-shadow:1rpx 1rpx 10rpx #0091ea;
 }
 
 .btn-hover {

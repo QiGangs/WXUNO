@@ -111,6 +111,10 @@ Page({
     });
   },
   into:function(){
+    if(this.data.roomid == "" || this.data.roomid == null){
+      //util.showErrorToast("需要输入房间号")
+      return;
+    }
     app.globalData.roomid = this.data.roomid
     this.beginConnect()
   },
