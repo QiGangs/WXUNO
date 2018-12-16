@@ -9,10 +9,10 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3C6080",
+    "navigationBarBackgroundColor": "#0091ea",
     "navigationBarTitleText": "小小牌",
     "navigationBarTextStyle": "#ffffff",
-    "backgroundColor": "#3C6080"
+    "backgroundColor": "#0091ea"
   },
   "networkTimeout": {
     "request": 6000,

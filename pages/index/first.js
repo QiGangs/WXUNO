@@ -7,7 +7,8 @@ Page({
    */
   data: {
     info1:"游戏游戏游戏游戏",
-    alarm:""
+    alarm:"",
+    disabled:false
   },
 
   /**
@@ -28,7 +29,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      alarm: "进入游戏",
+      disabled: false
+    })
   },
 
   /**
@@ -65,9 +69,15 @@ Page({
   onShareAppMessage: function () {
 
   },
-  intoSystem:function(){
+  intoSystem:function(e){
+    this.setData({
+      disabled:true
+    })
     wx.login({
       success: res => {
+        this.setData({
+          alarm: "登录中..."
+        })
         if (res.code) {
           console.log(res.code)
           wx.request({
@@ -96,19 +106,23 @@ Page({
               console.log("netwrror")
               console.log(res)
               this.setData({
-                alarm: "登录失败"
+                alarm: "登录失败",
+                disabled: false
               })
             }
           })
         } else {
-          // this.setData({
-          //   alarm: "微信授权失败"
-          // })
-          console.log(res + "微信授权失败")
+          this.setData({
+            alarm: "服务器错误",
+            disabled: false
+          })
         }
       },
       fail: res => {
-        console.log(res + "wxlogin")
+        this.setData({
+          alarm: "微信授权失败",
+          disabled: true
+        })
       }
     });
     

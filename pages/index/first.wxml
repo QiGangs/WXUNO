@@ -1,26 +1,29 @@
 <!--index.wxml-->
+<view class='topshadow'></view>
 <view class="maininfo">
+  <view class='bimg'>
+    <image class='img' src='../img/icx.png'></image>
+  </view>
+  
 
-  <image class='img' src='../img/icon.png'></image>
-
-  <text class='tyxy'>小小的牌</text>
+  <!-- <text class='tyxy'>小小的牌</text>
   <text class='tyxy'>大大的牌</text>
   <view class="usermotto">
     <text class="user-motto">{{info1}}</text>
   </view>
   <view class="usermotto3">
     <text class="user-motto">{{info3}}</text>
-  </view>
+  </view> -->
 
-  
+  <text class='tyxy'>灵飞六甲</text>
 
-  <view class="userinfo">
-    <button class='btn' hover-class='btn-hover' bindtap='intoSystem'> 进入游戏 </button>
-  </view>
+  <!-- <view class="userinfo"> -->
+    <button disabled="{{disabled}}" class='btn' hover-class='btn-hover' bindtap='intoSystem'> {{alarm}}            </button>
+  <!-- </view> -->
 
-  <view class='alarmx'>
-    {{alarm}}
-  </view>
+  <!-- <view class='alarmx'> -->
+    
+  <!-- </view> -->
   
 </view>
 
