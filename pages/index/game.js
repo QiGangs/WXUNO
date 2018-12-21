@@ -19,7 +19,7 @@ Page({
     rudge: [{ "id": 22, "type": "num", "num": 2, "func": "nofunc", "color": "green" }],
     truetempcolor:"",
 
-    listpid: ["001", "002", "003", "004"],
+    listpid: [{ id: "001", num: 5 }, { id: "002", num: 5 }, { id: "003", num: 5 }, { id: "004", num: 5 }],
     me: "001",
     cu: "002",
     derction:0
@@ -179,10 +179,28 @@ Page({
     })
   },
   exitgame: function () {
-    var msg = { type: -1, data: app.globalData.playerid }
-    wx.sendSocketMessage({
-      data: JSON.stringify(msg)
+    wx.showModal({
+      title: '退出房间',
+      content: '确定要退出该房间？',
+      showCancel: true,//是否显示取消按钮
+      cancelText: "否",//默认是“取消”
+      //cancelColor: 'skyblue',//取消文字的颜色
+      confirmText: "是",//默认是“确定”
+      //confirmColor: 'skyblue',//确定文字的颜色
+      success: function (res) {
+        if (res.cancel) {
+          //点击取消,默认隐藏弹框
+        } else {
+          var msg = { type: -1, data: app.globalData.playerid }
+          wx.sendSocketMessage({
+            data: JSON.stringify(msg)
+          })
+          wx.closeSocket()
+        }
+      },
+      fail: function (res) { },//接口调用失败的回调函数
+      complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
     })
-    wx.closeSocket()
+    
   }
 })

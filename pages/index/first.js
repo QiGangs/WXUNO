@@ -1,4 +1,5 @@
 // pages/index/first.js
+var utils = require('../util/util.js')
 const app = getApp()
 Page({
 
@@ -8,14 +9,17 @@ Page({
   data: {
     info1:"游戏游戏游戏游戏",
     alarm:"",
-    disabled:false
+    disabled:false,
+    roomid:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.roomid){
+      this.giveto(options.roomid)
+    }
   },
 
   /**
@@ -106,25 +110,88 @@ Page({
               console.log("netwrror")
               console.log(res)
               this.setData({
-                alarm: "登录失败",
+                alarm: "进入游戏",
                 disabled: false
               })
+              utils.showErrorToast("登录失败")
             }
           })
         } else {
           this.setData({
-            alarm: "服务器错误",
+            alarm: "进入游戏",
             disabled: false
           })
+          utils.showErrorToast("服务器错误")
         }
       },
       fail: res => {
         this.setData({
-          alarm: "微信授权失败",
+          alarm: "进入游戏",
           disabled: true
         })
+        utils.showErrorToast("微信授权失败")
       }
     });
     
+  },
+  giveto:function(roomid){
+    wx.showLoading({
+      title: '加载中...',
+      mask:true
+    })
+    wx.login({
+      success: res => {
+        if (res.code) {
+          console.log(res.code)
+          wx.request({
+            url: getApp().globalData.address + '/wx/login',
+            method: 'POST',
+            header: {
+              'Cache-Control': 'no-cache',
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data: {
+              code: res.code,
+            },
+            success: res => {
+              if (res.statusCode == 200) {
+                app.globalData.playerid = res.data
+                console.log(app.globalData.playerid)
+                wx.connectSocket({
+                  url: app.globalData.socketurl + '/websocket/' + roomid + '/' + app.globalData.playerid,
+                  method: 'GET',
+                  success: function () {
+                    wx.hideLoading()
+                    isConnect: true
+                    console.log("连接成功...")
+                    wx.redirectTo({
+                      url: './room',
+                      success: function (res) { },
+                      fail: function (res) { },
+                      complete: function (res) { },
+                    })
+                  },
+                  fail: function () {
+                    wx.hideLoading()
+                    isConnect: false
+                    console.log("连接失败...")
+                  }
+                });
+              }
+            },
+            fail: res => {
+              wx.hideLoading()
+              utils.showErrorToast("登录失败")
+            }
+          })
+        } else {
+          wx.hideLoading()
+          utils.showErrorToast("服务器错误")
+        }
+      },
+      fail: res => {
+        utils.showErrorToast("微信授权失败")
+      }
+    });
   }
 })

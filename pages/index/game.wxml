@@ -9,6 +9,8 @@
   <view bindtap='exitgame' class='t3x'> EX </view>
 </view>
 
+<view class='linxx'></view>
+
 <view class='playercard'>
   <view class='playerstatusf'  wx:for="{{listpid}}" wx:key="{{index}}" wx:for-index="index"  wx:for-item="items"> 
       <view style="{{ items.id == cu ? 'background-color:red' : ''}}" class='sta2'>
@@ -67,6 +69,8 @@
   <view class='t1x'> 手牌数：{{rudge.length}}</view>
   <view class='linel1'></view>
   <view class='t2x'> 选择的牌：{{cardid}}</view>
+  <!-- <view class='linel'></view>
+  <view class='t2x'> {{myid == canPutPlayerId ? "ing":"ed"}}</view> -->
 </view>
 
 <view style="{{colorshow?'display:block':'display:none'}}">
@@ -85,7 +89,7 @@
 <view>
   <scroll-view scroll-x class="scroll-header">
     <view bindtap='cardclick' class='cardlist' wx:for="{{rudge}}" wx:key="{{index}}" wx:for-index="index" data-id="{{items.id}}" data-funtpy="{{items.func}}"  wx:for-item="items"> 
-    <view style="{{items.color == 'nocolor' ? 'background-color:black': items.color == 'red' ? 'background-color:red' : items.color == 'yellow' ? 'background-color:orange' : items.color == 'blue' ? 'background-color:blue' : items.color == 'green' ? 'background-color:green':''}}" class="cardii">
+    <view hover-class='cardiimm' style="{{items.color == 'nocolor' ? 'background-color:black': items.color == 'red' ? 'background-color:red' : items.color == 'yellow' ? 'background-color:orange' : items.color == 'blue' ? 'background-color:blue' : items.color == 'green' ? 'background-color:green':''}}" class="cardii">
 
       <view class='cardtopx'>
         <view class='onefourc'>
@@ -116,8 +120,8 @@
       <view class='itemDescription'>功能：{{items.func}}</view> -->
 
 <view class='btnlist'>
-  <button class='btnn' bindtap='putcard'>出 牌</button>
-  <button class='btnn' bindtap='getcard'>摸 牌</button>
+  <button hover-class='btnnmm' class='btnn' bindtap='putcard'>出 牌</button>
+  <button hover-class='btnnmm' class='btnn' bindtap='getcard'>摸 牌</button>
 </view>
 
 <!-- 测试用

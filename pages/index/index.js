@@ -1,4 +1,5 @@
 // pages/index/index.js
+var utils = require('../util/util.js')
 const app = getApp()
 Page({
 
@@ -126,6 +127,9 @@ Page({
     this.setData({
       roomid:e.detail.value
     })
+  },
+  notok:function(){
+    utils.showa()
   }
   
 })

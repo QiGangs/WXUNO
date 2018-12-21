@@ -23,20 +23,36 @@ function formatNumber(n) {
 function showErrorToast(msg) {
   wx.showToast({
     title: msg,
-    image: '/static/images/icon_error.png'
+    image: './img/icon_error.png',
+    duration: 2000,
+    mask: true
   })
 }
+
+
 
 function showOKToast(msg) {
   wx.showToast({
     title: msg,
-    image: '/static/images/icon_error.png'
+    image: './img/icon_error.png'
+  })
+}
+
+function showa(msg){
+  wx.showToast({
+    title: '暂未开放',//提示文字
+    duration: 2000,//显示时长
+    mask: true,//是否显示透明蒙层，防止触摸穿透，默认：false  
+    // icon: 'success', //图标，支持"success"、"loading"  
+    image: '../img/icon_error.png',
+    success: function () { },//接口调用成功
+    fail: function () { },  //接口调用失败的回调函数  
+    complete: function () { } //接口调用结束的回调函数  
   })
 }
 
 module.exports = {
-  formatTime,
-  request,
-  redirect,
-  showErrorToast
+  showa:showa,
+  showOKToast: showOKToast,
+  showErrorToast: showErrorToast
 }

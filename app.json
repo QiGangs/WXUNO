@@ -2,10 +2,11 @@
   "pages": [
     
     "pages/index/first",
+    "pages/index/room",   
+    "pages/index/index",
     "pages/index/game",
-    "pages/index/result",
-    "pages/index/room",
-    "pages/index/index"
+    "pages/index/result"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,5 @@
 // pages/index/room.js
+var utils = require('../util/util.js')
 const app = getApp()
 Page({
 
@@ -6,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    roomid:'',
-    palyers:['001','007'],
+    roomid:'0000000000',
+    players:['001','007'],
   },
 
   /**
@@ -74,7 +75,24 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    if (app.globalData.roomid == null || app.globalData.roomid == "" || app.globalData.roomid == "000000"){
+      return
+    }
+    // if (res.from === 'button') {
+    //   // 来自页面内转发按钮
+    //   console.log(res.target)
+    // }
+    return {
+      title: '加入游戏吧',
+      path: '/pages/index/first?roomid=' + app.globalData.roomid,
+      imageUrl:'/pages/img/minigame.png',
+      success: function (res) {
+        utils.showOKToast("邀请成功")
+      },
+      fail: function (res) {
+        utils.showErrorToast("邀请失败")
+      }
+    }
   },
   dealJson:function(res){
     //解析JSON
@@ -90,11 +108,6 @@ Page({
     }else if(messJson.type == -1){
       wx.closeSocket()
     }
-    
-    
-
-    
-    
   },
   roomdeal:function(messJson){
     app.globalData.roomid = messJson.data.roomId
@@ -112,16 +125,37 @@ Page({
   }
   ,
   exitroom:function(){
-    var msg = { type: -1, data: app.globalData.playerid }
-    wx.sendSocketMessage({
-      data: JSON.stringify(msg)
+    wx.showModal({
+      title: '退出房间',
+      content: '确定要退出该房间？',
+      showCancel: true,//是否显示取消按钮
+      cancelText: "否",//默认是“取消”
+      //cancelColor: 'skyblue',//取消文字的颜色
+      confirmText: "是",//默认是“确定”
+      //confirmColor: 'skyblue',//确定文字的颜色
+      success: function (res) {
+        if (res.cancel) {
+          //点击取消,默认隐藏弹框
+        } else {
+          var msg = { type: -1, data: app.globalData.playerid }
+          wx.sendSocketMessage({
+            data: JSON.stringify(msg)
+          })
+          wx.closeSocket()
+        }
+      },
+      fail: function (res) { },//接口调用失败的回调函数
+      complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
     })
-    wx.closeSocket()
+   
   },
   startgame:function(){
     var msg = { type: 110, data: '' }
     wx.sendSocketMessage({
       data: JSON.stringify(msg)
     })
+  },
+  givetoone:function(){
+
   }
 })

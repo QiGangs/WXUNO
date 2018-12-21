@@ -1,17 +1,26 @@
 <!--pages/index/room.wxml-->
+<view class='topshadow'></view>
+
 <view class='titlex'>
   <view class='cardinfo'>
-    <view>房间ID：{{roomid}}</view>
+    <image src='../img/home.png'  class='titimg'> </image>
+    <view>ID：{{roomid}}</view> 
+    <button open-type='share' class='mxmx'>
+      <image src='../img/share.png'  class='yq'>  </image>
+      <!-- <view class='mxmxf'>邀请</view> -->
+    </button>
   </view>
 </view>
+
+<view class='linexxx'></view>
 
 
 
 <view class='playlist'>
-  <view class='play'><text class='ptxt'>{{players[0]}}</text></view>
-  <view class='play'><text class='ptxt'>{{players[1]}}</text></view>
-  <view class='play'><text class='ptxt'>{{players[2]}}</text></view>
-  <view class='play'><text class='ptxt'>{{players[3]}}</text></view>
+  <view class='play'>{{players[0]}}</view>
+  <view class='play'>{{players[1]}}</view>
+  <view class='play'>{{players[2]}}</view>
+  <view class='play'>{{players[3]}}</view>
 </view>
 
 <view class='btx'>

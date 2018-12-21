@@ -1,41 +1,114 @@
 <!--pages/index/index.wxml-->
 
-
-<view class='titlex'>
-  <text class='tit'></text>
-</view>
-
+<view class='topshadow'></view>
 
   <view class='ix' >
     <input placeholder='房间号' bindinput='roomidInput' name="roomid" class='inputx' ></input>
+    <button class='bt1' bindtap='into'> 进入房间 </button>
   </view>
 
-
-
-
-<view class='btx'>
-<button class='bt' bindtap='into'> 进入房间 </button>
-</view>
 <view class='btx'>
   <button class='bt' bindtap='create'> 创建新房间 </button>
 </view>
 
 
 <view class='linex'></view>
+<view class='linex'></view>
 
-<view class='oth'>
-  <text>游戏规则：</text>
-  <text>\n谁先出完牌谁先赢！</text>
-  <text>\n颜色相同或数字相同可以出牌。</text>
-  <text>\n有些功能牌也需颜色相同，有些则不然。</text>
-  <!-- <text>\n这不是UNO牌，规则请自己摸索。</text>
-  <text>\n形似而神不似。</text> -->
+<!-- <view  style="width: 100%" class="scroll-header">
+  <view class='inlinex'> 
+  <view style="background-color:black" class="cardii">
+      <view class='cardtopx'>
+        <view class='onefourc'>
+          <view class='idclass1'>108</view>
+        </view>
+      </view>
+      <view class='cardcenter'>
+        <view style="color:black"  class='oneonec'>
+          <view class='carditemf'> T </view>
+        </view>
+      </view>
+      <view class='cardbottomx'>
+        <view class='onefourc1'>
+          <view class='idclass2'>108</view>
+        </view>
+      </view>
+    </view>
+    </view>
+
+    <view class='inlinex'> 
+  <view style="background-color:orange" class="cardii">
+      <view class='cardtopx'>
+        <view class='onefourc'>
+          <view class='idclass1'>96</view>
+        </view>
+      </view>
+      <view class='cardcenter'>
+        <view style="color:orange"  class='oneonec'>
+          <view class='carditemf'> S </view>
+        </view>
+      </view>
+      <view class='cardbottomx'>
+        <view class='onefourc1'>
+          <view class='idclass2'>96</view>
+        </view>
+      </view>
+    </view>
+    </view>
+
+    <view class='inlinex'> 
+  <view style="background-color:green" class="cardii">
+      <view class='cardtopx'>
+        <view class='onefourc'>
+          <view class='idclass1'>56</view>
+        </view>
+      </view>
+      <view class='cardcenter'>
+        <view style="color:green"  class='oneonec'>
+          <view class='carditemf'> A </view>
+        </view>
+      </view>
+      <view class='cardbottomx'>
+        <view class='onefourc1'>
+          <view class='idclass2'>56</view>
+        </view>
+      </view>
+    </view>
+    </view>
 </view>
 
 <view class='linex'></view>
+<view class='linex'></view> -->
 
-<view class='linex'></view>
+<view class='mainv'>
 
-<view>
-<text>*</text>
+<view class='lista'>
+  <view class='listi' bindtap='notok'>
+    游戏大厅
+  </view>
+
+  <view class='listi' bindtap='notok'>
+    游戏规则
+  </view>
+
+  <view class='listi' bindtap='notok'>
+    赞赏一下
+  </view>
+
+</view>
+
+<view class='lista'>
+  <view class='listi' bindtap='notok'>
+    关于游戏
+  </view>
+
+  <view class='listi' bindtap='notok'>
+    个人中心
+  </view>
+
+  <view class='listix'>
+  </view>
+
+</view>
+
 </view>

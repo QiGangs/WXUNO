@@ -11,7 +11,7 @@ border:1px solid black;
 display: inline-block; 
 } */
 .derc{
-  margin-top: 12rpx;
+  margin-top: 6rpx;
   margin-left: 2rpx;
 }
 .cardi{
@@ -24,6 +24,7 @@ display: inline-block;
 }
 
 .cardii{
+  box-shadow:1rpx 1rpx 4rpx #666666;
   padding: 0rpx;
   height:344rpx;
   width:244rpx;
@@ -31,6 +32,10 @@ display: inline-block;
   border-radius:16rpx;
   display: flex;
   flex-direction: column;
+}
+
+.cardiimm{
+  box-shadow:0rpx 0rpx 10rpx #333333;
 }
 
 .cardlist{
@@ -60,7 +65,12 @@ display: inline-block;
   margin-right: 20rpx;
 }
 .t3x{
-  padding-left: 8rpx;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  padding-left: 12rpx;
+  padding-right: 12rpx;
   width: 58rpx;
   height: 50rpx;
   margin-left: 16rpx;
@@ -69,7 +79,7 @@ display: inline-block;
 }
 
 .layout_horizontal{
-  background-color: #3C6080;
+  background-color: #0091ea;
   color: #ffffff;
   padding: 16rpx;
   display: flex;
@@ -77,6 +87,12 @@ display: inline-block;
   flex-direction: row;
 }
 
+.linxx{
+  width: 100%;
+  height: 2rpx;
+  background-color: white;
+  box-shadow: 0rpx 0rpx 5rpx #ffffff;
+}
 
 .leftright{
   background-color: #ffffff;
@@ -165,17 +181,21 @@ display: inline-block;
 }
 
 .infoxxxx{
+  box-shadow:1rpx 1rpx 8rpx #0091ea;
+  border-radius:20rpx 20rpx 20rpx 20rpx /20rpx 20rpx 20rpx 20rpx ;
   padding: 24rpx;
   color: #ffffff;
-  background-color: #3C6080;
+  background-color: #0091ea;
   display: flex;
   flex-direction: row;
 }
 
 .playercard{
+  margin-bottom: 8rpx;
+  box-shadow:1rpx 1rpx 8rpx #0091ea;
   padding: 24rpx;
   color: #ffffff;
-  background-color: #3C6080;
+  background-color: #0091ea;
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: row;
@@ -183,9 +203,16 @@ display: inline-block;
 
 
 .btnn{
+  border: 0rpx;
+  box-shadow:1rpx 1rpx 8rpx #0091ea;
+  border-radius:50rpx 50rpx 50rpx 50rpx /50rpx 50rpx 50rpx 50rpx ;
   color:#ffffff;
-  background-color: #3C6080;
+  background-color: #0091ea;
   width: 48%;
+}
+
+.btnnmm{
+  box-shadow:0rpx 0rpx 10rpx #333333;
 }
 
 
@@ -199,18 +226,25 @@ display: inline-block;
   background-color: #f10b2e;
 }
 .sta2{
-  padding-top: 8rpx;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  padding-top: 0rpx;
   color: #ffffff;
   width: 72rpx;
   height: 72rpx;
   margin-left: 16rpx;
   margin-right: 16rpx;
-  border: 0 solid #aaaaaa;
+  border: 1rpx solid #ffffff;
   border-radius: 100rpx;
-  background-color: #aaaaaa;
+  background-color: #666666;
 }
 .stax{
-  margin-left: 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
 }
 
 .cardcenter{
